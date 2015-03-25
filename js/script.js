@@ -6,11 +6,25 @@
 angular.module('app', []);
 
 angular.module('app').controller('mainCtrl', function ($scope) {
+	$scope.user = {
+		name: 'Luke Skywalker',
+		address: {
+			street:'PO Box 123',
+			city: 'Rebel Base',
+			planet: 'Alderaan'
+		},
+		friends: [
+			'Han',
+			'Chewbaca',
+			'Obi Wan'
+		]
+	}
 
 });
 
 angular.module('app').directive('userInfoCard', function () {
 	return {
-		template: "User Info Card Test"
+		templateUrl: 'userInfoCard.html',
+		restrict: "A"
 	}
 });
